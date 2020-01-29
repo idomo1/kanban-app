@@ -225,7 +225,18 @@ eval("\n\nif (false) {} else {\n  module.exports = __webpack_require__(/*! ./cjs
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("var React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nmodule.exports = function () {\n  return React.createElement(\"div\", null, React.createElement(\"h1\", null, \"Test\"));\n};\n\n//# sourceURL=webpack:///./src/public/js/components/app/App.jsx?");
+eval("var React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar Header = __webpack_require__(/*! ../header/Header */ \"./src/public/js/components/header/Header.jsx\");\n\nmodule.exports = function () {\n  return React.createElement(\"div\", null, React.createElement(Header, null));\n};\n\n//# sourceURL=webpack:///./src/public/js/components/app/App.jsx?");
+
+/***/ }),
+
+/***/ "./src/public/js/components/header/Header.jsx":
+/*!****************************************************!*\
+  !*** ./src/public/js/components/header/Header.jsx ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("var React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nmodule.exports = function () {\n  return React.createElement(\"div\", {\n    className: \"header\"\n  });\n};\n\n//# sourceURL=webpack:///./src/public/js/components/header/Header.jsx?");
 
 /***/ }),
 

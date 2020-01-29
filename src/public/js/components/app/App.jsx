@@ -1,9 +1,10 @@
 const React = require("react");
+const Header = require("../header/Header")
 
 module.exports = () => {
     return (
         <div>
-            <h1>Test</h1>
+            <Header />
         </div>
     )
 }

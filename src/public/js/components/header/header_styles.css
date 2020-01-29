@@ -1,11 +1,3 @@
-:root {
-    --c-blue: #007ACC;
-}
-
-body {
-    margin: 0;
-}
-
 .header {
     background-color: var(--c-blue);
     height: 3em;
