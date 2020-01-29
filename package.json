@@ -31,6 +31,7 @@
     "html-webpack-plugin": "^3.2.0",
     "nodemon": "^2.0.2",
     "postcss": "^7.0.26",
-    "postcss-cli": "^7.1.0"
+    "postcss-cli": "^7.1.0",
+    "postcss-import": "^12.0.1"
   }
 }
