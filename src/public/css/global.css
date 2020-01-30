@@ -1,7 +1,9 @@
 :root {
     --c-blue: #007ACC;
+    --c-blue-secondary: #61A4F4;
 }
 
 body {
     margin: 0;
+    background-color: var(--c-blue-secondary);
 }
