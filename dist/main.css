@@ -1,12 +1,44 @@
 :root {
     --c-blue: #007ACC;
+    --c-blue-secondary: #61A4F4;
+    --c-white: #F7FAFF;
 }
 
 body {
     margin: 0;
+    background-color: var(--c-blue-secondary);
 }
 
 .header {
     background-color: var(--c-blue);
     height: 3em;
+}
+
+.c-item {
+    margin: 1em;
+    padding: 1em;
+    border-radius: .5em;
+    background-color: lightgrey;
+}
+
+.l-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: nowrap;
+    height: 100vh;
+    width: 100%;
+}
+
+.l-row__elem {
+    margin: 3em;
+    padding: .5em;
+    background-color: var(--c-white);
+    height: 100%;
+    flex-grow: 1;
+}
+
+.c-title {
+    font-family: 'Lato', sans-serif;
+    margin-top: .1em;
 }

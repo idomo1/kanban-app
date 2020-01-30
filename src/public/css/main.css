@@ -1,2 +1,5 @@
 @import './global.css';
-@import '../js/components/header/header_styles.css'
+@import '../js/components/header/header_styles.css';
+@import '../js/components/item/item_styles.css';
+@import '../js/components/rowContainer/row_container_styles.css';
+@import '../js/components/list/list_styles.css';

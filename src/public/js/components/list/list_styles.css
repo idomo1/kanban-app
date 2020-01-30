@@ -1,0 +1,12 @@
+.l-row__elem {
+    margin: 3em;
+    padding: .5em;
+    background-color: var(--c-white);
+    height: 100%;
+    flex-grow: 1;
+}
+
+.c-title {
+    font-family: 'Lato', sans-serif;
+    margin-top: .1em;
+}
