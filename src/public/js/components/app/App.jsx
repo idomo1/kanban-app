@@ -1,7 +1,7 @@
-const React = require("react");
-const Header = require("../header/Header")
+import React from "react"
+import Header from "../header/Header"
 
-module.exports = () => {
+export default () => {
     return (
         <div>
             <Header />

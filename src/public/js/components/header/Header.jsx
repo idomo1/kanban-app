@@ -1,6 +1,6 @@
-const React = require("react");
+import React from "react"
 
-module.exports = () => {
+export default () => {
     return (
         <div className='header' />
     )
