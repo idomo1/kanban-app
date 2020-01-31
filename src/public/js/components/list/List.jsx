@@ -1,5 +1,24 @@
 import React from "react"
+import { DropTarget } from "react-dnd"
 import Item from "../item/Item"
+import DraggableTypes from "../types/DraggableTypes"
+
+const spec = {
+    drop(props, monitor, component) {
+        if (monitor.didDrop()) {
+            return;
+        }
+
+        const item = monitor.getItem();
+        component.addItem(null, item.text);
+    },
+}
+
+function collect(connect, monitor) {
+    return {
+        connectDropTarget: connect.dropTarget()
+    }
+}
 
 class List extends React.Component {
     constructor(props) {
@@ -18,18 +37,20 @@ class List extends React.Component {
         }))
     }
 
-    addItem() {
+    addItem(event, defaultText="") {
         this.setState(prevState => ({
             items: prevState.items.concat({
                 id: prevState.itemIndex,
-                item: <Item key={prevState.itemIndex} id={prevState.itemIndex} removeItem={this.removeItem}/>
+                item: <Item key={prevState.itemIndex} id={prevState.itemIndex} text={defaultText.toString()} removeItem={this.removeItem} />
             }),
             itemIndex: prevState.itemIndex + 1
         }));
     }
 
     render() {
-        return (
+        const { connectDropTarget } = this.props;
+
+        return connectDropTarget(
             <div className="l-row__elem">
                 <h2 className="c-title">{this.props.title}</h2>
                 {this.state.items.map(item => item.item)}
@@ -40,4 +61,4 @@ class List extends React.Component {
     }
 };
 
-export default List;
+export default DropTarget(DraggableTypes.CARD, spec, collect)(List);

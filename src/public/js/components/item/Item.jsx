@@ -6,17 +6,23 @@ import TextField from "@material-ui/core/TextField"
 import { withStyles } from "@material-ui/core"
 
 const cardSource = {
-    beginDrag(props) {
-        return {text: props.text}
+
+    isDragging(props, monitor) {
+        return monitor.getItem().id === props.id;
+    },
+
+    beginDrag(props, monitor, component) {
+        return {id: props.id, text: component.state.text};
     },
 
     endDrag(props, monitor, component) {
+        // Remove item from original list when dropped on new list
         if (!monitor.didDrop()) {
             return
         }
 
         const item = monitor.getItem();
-        const dropResult = monitor.getDropResult();
+        component.removeItem(item.id);
     },
 }
 
@@ -41,7 +47,7 @@ const ThemedTextField = withStyles({
 class Item extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {text: ""};
+        this.state = {text: props.text};
 
         this.removeItem = this.removeItem.bind(this);
         this.handleChange = this.handleChange.bind(this);
@@ -62,12 +68,12 @@ class Item extends React.Component {
         <div className='c-item'>
             <button onClick={this.removeItem} className="c-item__remove-item-button"><ClearIcon /></button>
             <ThemedTextField
+            defaultValue={this.props.text}
             value={this.state.value}
             onChange={this.handleChange}
             placeholder="Write item here..."
             multiline
             fullWidth />
-            <p>{isDragging && 'is being dragged'}</p>
         </div>
         )
     }
