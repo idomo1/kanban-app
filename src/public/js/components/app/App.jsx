@@ -5,7 +5,6 @@ import HTML5Backend from "react-dnd-html5-backend"
 import Header from "../header/Header"
 import RowContainer from "../rowContainer/RowContainer"
 import List from "../list/List"
-import Item from "../item/Item"
 
 export default () => (
         <div>

@@ -3,4 +3,13 @@
     padding: 1em;
     border-radius: .5em;
     background-color: lightgrey;
+    position: relative;
+}
+
+.c-remove-item-button {
+    display: inline;
+    border: none;
+    background-color: inherit;
+    position: absolute;
+    right: 1em;
 }

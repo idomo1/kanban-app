@@ -19,6 +19,15 @@ body {
     padding: 1em;
     border-radius: .5em;
     background-color: lightgrey;
+    position: relative;
+}
+
+.c-remove-item-button {
+    display: inline;
+    border: none;
+    background-color: inherit;
+    position: absolute;
+    right: 1em;
 }
 
 .l-row {
@@ -41,4 +50,12 @@ body {
 .c-title {
     font-family: 'Lato', sans-serif;
     margin-top: .1em;
+}
+
+.c-add-item-button {
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 3em;
+    background-color: var(--c-white);
 }
