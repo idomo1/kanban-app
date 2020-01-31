@@ -6,10 +6,11 @@
     position: relative;
 }
 
-.c-remove-item-button {
+.c-item__remove-item-button {
     display: inline;
     border: none;
-    background-color: inherit;
+    background-color: rgba(0, 0, 0, 0); /* Use RGBA so children aren't made transparent aswell */
     position: absolute;
     right: 1em;
+    z-index: 999;
 }

@@ -1,7 +1,9 @@
 import React from "react"
 import { DragSource } from "react-dnd"
 import DraggableTypes from "../types/DraggableTypes"
-import ClearIcon from '@material-ui/icons/Clear'
+import ClearIcon from "@material-ui/icons/Clear"
+import TextField from "@material-ui/core/TextField"
+import { withStyles } from "@material-ui/core"
 
 const cardSource = {
     beginDrag(props) {
@@ -25,16 +27,32 @@ function collect(connect, monitor) {
     }
 }
 
+const ThemedTextField = withStyles({
+    root: {
+        '& .MuiInput-underline:before': {
+            borderBottomWidth: 0,
+        },
+        '& .MuiInput-underline:after': {
+            borderBottomWidth: 0,
+        },
+    },
+})(TextField);
+
 class Item extends React.Component {
     constructor(props) {
         super(props);
         this.state = {text: ""};
 
         this.removeItem = this.removeItem.bind(this);
+        this.handleChange = this.handleChange.bind(this);
     }
 
     removeItem() {
         this.props.removeItem(this.props.id);
+    }
+
+    handleChange(event) {
+        this.setState({text: event.target.value})
     }
 
     render() {
@@ -42,8 +60,13 @@ class Item extends React.Component {
 
     return connectDragSource(
         <div className='c-item'>
-            <button onClick={this.removeItem} className="c-remove-item-button"><ClearIcon /></button>
-            <p>{this.state.text}<br /></p>
+            <button onClick={this.removeItem} className="c-item__remove-item-button"><ClearIcon /></button>
+            <ThemedTextField
+            value={this.state.value}
+            onChange={this.handleChange}
+            placeholder="Write item here..."
+            multiline
+            fullWidth />
             <p>{isDragging && 'is being dragged'}</p>
         </div>
         )
