@@ -60,3 +60,13 @@ body {
     height: 3em;
     background-color: var(--c-white);
 }
+
+.c-swatch-picker {
+    position: absolute;
+    padding: .3em;
+    background-color: grey;
+    display: flex;
+    top: -3.5em;
+    left: -1em;
+    border-radius: .2em;
+}

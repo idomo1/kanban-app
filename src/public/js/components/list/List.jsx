@@ -10,7 +10,7 @@ const spec = {
         }
 
         const item = monitor.getItem();
-        component.addItem(null, item.text);
+        component.addItem(null, item.text, item.colorIndex);
     },
 }
 
@@ -37,11 +37,16 @@ class List extends React.Component {
         }))
     }
 
-    addItem(event, defaultText="") {
+    addItem(event, defaultText="", colorIndex=0) {
         this.setState(prevState => ({
             items: prevState.items.concat({
                 id: prevState.itemIndex,
-                item: <Item key={prevState.itemIndex} id={prevState.itemIndex} text={defaultText.toString()} removeItem={this.removeItem} />
+                item: <Item
+                key={prevState.itemIndex}
+                id={prevState.itemIndex}
+                text={defaultText.toString()}
+                removeItem={this.removeItem}
+                colorIndex={colorIndex} />
             }),
             itemIndex: prevState.itemIndex + 1
         }));

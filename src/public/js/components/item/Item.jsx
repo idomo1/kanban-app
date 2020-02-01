@@ -4,6 +4,7 @@ import DraggableTypes from "../types/DraggableTypes"
 import ClearIcon from "@material-ui/icons/Clear"
 import TextField from "@material-ui/core/TextField"
 import { withStyles } from "@material-ui/core"
+import ColorPicker from "../colorPicker/ColorPicker"
 
 const cardSource = {
 
@@ -12,7 +13,11 @@ const cardSource = {
     },
 
     beginDrag(props, monitor, component) {
-        return {id: props.id, text: component.state.text};
+        return {
+            id: props.id,
+            text: component.state.text,
+            colorIndex: component.state.colorIndex
+        };
     },
 
     endDrag(props, monitor, component) {
@@ -47,10 +52,11 @@ const ThemedTextField = withStyles({
 class Item extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {text: props.text};
+        this.state = {text: props.text, colorIndex: this.props.colorIndex};
 
         this.removeItem = this.removeItem.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        this.onColorChange = this.onColorChange.bind(this);
     }
 
     removeItem() {
@@ -61,12 +67,17 @@ class Item extends React.Component {
         this.setState({text: event.target.value})
     }
 
+    onColorChange(newColorIndex) {
+        this.setState({colorIndex: newColorIndex});
+    }
+
     render() {
-        const { isDragging, connectDragSource } = this.props;
+        const { connectDragSource } = this.props;
 
     return connectDragSource(
         <div className='c-item'>
             <button onClick={this.removeItem} className="c-item__remove-item-button"><ClearIcon /></button>
+            <ColorPicker onColorChange={this.onColorChange} colorIndex={this.props.colorIndex} />
             <ThemedTextField
             defaultValue={this.props.text}
             value={this.state.value}
