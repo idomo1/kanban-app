@@ -36,7 +36,8 @@ export default class ColorPicker extends React.Component {
             <SwatchPicker
             colors={this.state.colors}
             currentColor={this.state.color}
-            onColorSelected={this.onColorChange} />
+            onColorSelected={this.onColorChange}
+            toggleSwatchDisplay={this.toggleSwatchDisplay} />
         )
     }
 

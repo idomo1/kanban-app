@@ -11,6 +11,19 @@ export default class SwatchPicker extends React.Component {
         super(props);
 
         this.state = {selected: props.currentColor};
+        this.handleClickOutside = this.handleClickOutside.bind(this);
+    }
+
+    componentDidMount() {
+        document.addEventListener('click', this.handleClickOutside);
+    }
+
+    componentWillUnmount() {
+        document.removeEventListener('click', this.handleClickOutside);
+    }
+
+    handleClickOutside(e) {
+        this.props.toggleSwatchDisplay();
     }
 
     render() {
