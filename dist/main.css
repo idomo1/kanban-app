@@ -64,7 +64,7 @@ body {
 .c-swatch-picker {
     position: absolute;
     padding: .3em;
-    background-color: grey;
+    background-color: lightgrey;
     display: flex;
     top: -3.5em;
     left: -1em;
