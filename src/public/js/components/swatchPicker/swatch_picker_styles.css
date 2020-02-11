@@ -1,9 +1,10 @@
 .c-swatch-picker {
     position: absolute;
     padding: .3em;
-    background-color: lightgrey;
+    background-color: darkgray;
     display: flex;
     top: -3.5em;
     left: -1em;
     border-radius: .2em;
+    box-shadow: 4px 4px 2px -3px rgba(0,0,0,0.75);
 }

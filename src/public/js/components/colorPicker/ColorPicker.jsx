@@ -5,7 +5,7 @@ export default class ColorPicker extends React.Component {
     constructor(props) {
         super(props);
 
-        const colors = ["#F18F01", "#006E90", "#D84797", "#6F58C9"];
+        const colors = ["#6F58C9", "#F18F01", "#006E90", "#D84797"];
 
         this.state = {
             displaySwatches: false,

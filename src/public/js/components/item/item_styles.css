@@ -1,10 +1,11 @@
 .c-item {
-    margin: 1em;
+    margin: .3em .1em;
     padding: 1em;
     padding-right: 4em;
     border-radius: .3em;
-    background-color: lightgrey;
+    background-color: var(--c-white);
     position: relative;
+    box-shadow: 2px 2px 2px 0px grey;
 }
 
 .c-item__remove-item-button {
