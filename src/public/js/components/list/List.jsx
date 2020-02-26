@@ -1,6 +1,7 @@
 import React from "react"
 import { DropTarget } from "react-dnd"
-import Item from "../item/Item"
+
+import DraggableItem from "../dragableItem/DraggableItem"
 import DraggableTypes from "../types/DraggableTypes"
 
 const spec = {
@@ -41,7 +42,7 @@ class List extends React.Component {
         this.setState(prevState => ({
             items: prevState.items.concat({
                 id: prevState.itemIndex,
-                item: <Item
+                item: <DraggableItem
                 key={prevState.itemIndex}
                 id={prevState.itemIndex}
                 text={defaultText.toString()}
