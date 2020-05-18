@@ -10,8 +10,7 @@
 
 .c-title {
     font-family: 'Lato', sans-serif;
-    margin-top: .1em;
-    margin-bottom: 0;
+    margin: .3em 0 0 .3em;
 }
 
 .c-add-item-button {
