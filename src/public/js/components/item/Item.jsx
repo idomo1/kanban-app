@@ -13,6 +13,9 @@ const ThemedTextField = withStyles({
         '& .MuiInput-underline:after': {
             borderBottomWidth: 0,
         },
+        '& .MuiInputBase-input': {
+            paddingTop: '.5em',
+        }
     },
 })(TextField);
 
