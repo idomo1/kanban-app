@@ -1,5 +1,5 @@
 .l-row__elem {
-    margin: 5em;
+    margin: .5em;
     padding: .5em;
     background-color: lightgray;
     height: 100%;
@@ -9,7 +9,7 @@
 
 .c-title {
     font-family: 'Lato', sans-serif;
-    margin: .3em 0 0 .3em;
+    margin: .3em .3em .4em .3em;
 }
 
 .c-add-item-button {

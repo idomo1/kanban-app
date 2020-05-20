@@ -5,7 +5,7 @@
     border-radius: .3em;
     background-color: var(--c-white);
     position: relative;
-    box-shadow: 2px 2px 2px 0px grey;
+    box-shadow: 1px 1px 1px 0px grey;
 }
 
 .c-item__remove-item-button {
