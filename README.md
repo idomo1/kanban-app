@@ -1,3 +1,7 @@
-# To-Do App
-A simple drag and drop to-do application implemented with React  
-Implemented using [React DnD](https://react-dnd.github.io/react-dnd/about)
+# Kanban App
+![](demo.gif)  
+A simple drag and drop kanban implemented with React  
+Uses [React DnD](https://react-dnd.github.io/react-dnd/about)
+
+## Try it
+[Click me](http://todo-app-dev.ap-southeast-2.elasticbeanstalk.com/)
