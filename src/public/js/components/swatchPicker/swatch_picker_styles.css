@@ -1,7 +1,7 @@
 .c-swatch-picker {
     position: absolute;
     padding: .3em;
-    background-color: darkgray;
+    background-color: rgb(216, 216, 216);
     display: flex;
     top: -3.5em;
     left: -1em;

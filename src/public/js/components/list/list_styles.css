@@ -1,7 +1,7 @@
 .l-row__elem {
     margin: .5em;
     padding: .5em;
-    background-color: lightgray;
+    background-color: rgb(223, 223, 223);
     height: 100%;
     flex-grow: 1;
     border-radius: .15em;
